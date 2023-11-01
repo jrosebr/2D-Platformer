@@ -21,7 +21,12 @@ func _physics_process(_delta):
 func set_direction(d):
 	direction = d
 
-func set_animation(anim):
+func set_animation(anim, off=Vector2.ZERO):
 	if $AnimatedSprite2D.animation == anim: return
 	if $AnimatedSprite2D.sprite_frames.has_animation(anim): $AnimatedSprite2D.play(anim)
 	else: $AnimatedSprite2D.play()
+	$AnimatedSprite2D.offset = off
+
+
+func die():
+	queue_free()
