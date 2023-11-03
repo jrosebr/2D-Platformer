@@ -11,6 +11,9 @@ The player sprite is an adaptation of MV [Platformer Male](https://opengameart.o
 
 The [tilemap](https://kenney.nl/assets/abstract-platformer) and the [coin sprite](https://kenney.nl/assets/puzzle-pack-2) are provided by Kenney.nl.
 
+
+The enemies are from the [Medieval Fantasy Character Pack](https://oco.itch.io/medieval-fantasy-character-pack) by OcO. CC0 Licensed
+
 ## What Makes this a Game?
 
 ## References
