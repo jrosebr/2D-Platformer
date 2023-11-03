@@ -14,6 +14,9 @@ The [tilemap](https://kenney.nl/assets/abstract-platformer) and the [coin sprite
 
 The enemies are from the [Medieval Fantasy Character Pack](https://oco.itch.io/medieval-fantasy-character-pack) by OcO. CC0 Licensed
 
+
+The font is from [Super Mario 265](https://www.dafont.com/super-mario-256.font) by fsuarez913
+
 ## What Makes this a Game?
 
 ## References
