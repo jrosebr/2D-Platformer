@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://bo0kir7h724us"]
+[gd_scene load_steps=24 format=3 uid="uid://bo0kir7h724us"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7802r"]
-[ext_resource type="Texture2D" uid="uid://bj77d83apw6tq" path="res://Assets/player.png" id="2_1w4b6"]
+[ext_resource type="Texture2D" uid="uid://dr0sb5f2ly3ck" path="res://Assets/player.png" id="2_1w4b6"]
 [ext_resource type="Script" path="res://Player/StateMachine.gd" id="3_vv8j5"]
 [ext_resource type="Script" path="res://Player/Idle.gd" id="4_3sqag"]
 [ext_resource type="Script" path="res://Player/Moving.gd" id="5_7cplu"]
@@ -125,6 +125,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mnil"]
 size = Vector2(17, 47)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jubsw"]
+radius = 14.4404
+height = 77.9783
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(200, 200)
 scale = Vector2(1.385, 1.385)
@@ -133,7 +137,7 @@ script = ExtResource("1_7802r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.385, 1.385)
 sprite_frames = SubResource("SpriteFrames_4xa3h")
-animation = &"Falling"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -161,3 +165,13 @@ scale = Vector2(1.385, 1.385)
 limit_left = 0
 limit_right = 3760
 limit_bottom = 650
+
+[node name="Coin_Collector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
+position = Vector2(-1.44402, 6.4982)
+shape = SubResource("CapsuleShape2D_jubsw")
+
+[connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]

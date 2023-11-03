@@ -30,3 +30,8 @@ func set_animation(anim, off=Vector2.ZERO):
 
 func die():
 	queue_free()
+
+
+func _on_coin_collector_body_entered(body):
+	if body.name == "Coins":
+		body.get_coin(global_position)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy1c7gcup8ms2"]
+
+[ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_ixasc"]
+[ext_resource type="FontFile" uid="uid://drpf0a4p1n2p2" path="res://Assets/SuperMario256.ttf" id="2_cbx0b"]
+
+[sub_resource type="Theme" id="Theme_3v2w4"]
+default_font = ExtResource("2_cbx0b")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_1cowv"]
+default_font = ExtResource("2_cbx0b")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_1bcwt"]
+default_font = ExtResource("2_cbx0b")
+default_font_size = 25
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixasc")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.160784, 0.32549, 1, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 400.0
+grow_horizontal = 2
+theme = SubResource("Theme_3v2w4")
+text = "Welcome to my 2D Platformer!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1cowv")
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1bcwt")
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

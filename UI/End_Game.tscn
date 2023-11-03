@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbu2uy7evfnm3"]
+
+[ext_resource type="Script" path="res://UI/End_Game.gd" id="1_mriny"]
+[ext_resource type="FontFile" uid="uid://drpf0a4p1n2p2" path="res://Assets/SuperMario256.ttf" id="2_8r0ng"]
+
+[sub_resource type="Theme" id="Theme_wt6jq"]
+default_font = ExtResource("2_8r0ng")
+default_font_size = 55
+
+[sub_resource type="Theme" id="Theme_t3q5r"]
+default_font = ExtResource("2_8r0ng")
+default_font_size = 55
+
+[sub_resource type="Theme" id="Theme_pbb7w"]
+default_font = ExtResource("2_8r0ng")
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_ilqg5"]
+default_font = ExtResource("2_8r0ng")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_wsg4f"]
+default_font = ExtResource("2_8r0ng")
+default_font_size = 25
+
+[node name="End_Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mriny")
+
+[node name="Congradulations" type="Label" parent="."]
+modulate = Color(0.654902, 0, 1, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = SubResource("Theme_wt6jq")
+text = "Congradulations! "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.768627, 0, 0.870588, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 327.0
+grow_horizontal = 2
+theme = SubResource("Theme_t3q5r")
+text = "You collected all the Coins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0.392157, 0.545098, 0.996078, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 608.0
+grow_horizontal = 2
+theme = SubResource("Theme_pbb7w")
+text = "Thank you for playing my Platformer!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ilqg5")
+text = "Play Again?"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wsg4f")
+text = "Quit"
+
+[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
